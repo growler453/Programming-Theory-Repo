@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lollipop : Candy
+public class Junk : Candy
 {
     protected override IEnumerator PickupTimer()
     {

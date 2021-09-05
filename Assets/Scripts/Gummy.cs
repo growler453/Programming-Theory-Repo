@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gummy : MonoBehaviour
+public class Gummy : Candy
 {
+    protected override IEnumerator PickupTimer()
+    {
+        throw new System.NotImplementedException();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
