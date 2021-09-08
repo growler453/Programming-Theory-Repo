@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
+    // ENCAPSULATION
     public static MainManager Instance { get; private set; }
 
     public Color pickedColor { get; private set; }

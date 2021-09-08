@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// INHERITANCE BASE CLASS
 public abstract class Candy : MonoBehaviour
 {
     private Text popup;
@@ -14,6 +15,8 @@ public abstract class Candy : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         popup = GameObject.Find("Popup Text").GetComponent<Text>();
     }
+
+    // ABSTRACTION
 
     // Increases score, sets text opacity and displays it
     protected void GiveSugar(int sugar)
@@ -33,6 +36,7 @@ public abstract class Candy : MonoBehaviour
         PopupTimer();
     }
 
+    // POLYMORPHISM
     protected abstract void DoAction();
 
     // Displays text for set time or until it's opacity is zero

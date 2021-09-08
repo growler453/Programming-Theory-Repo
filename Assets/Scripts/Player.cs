@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    // ENCAPSULATION
     public static float health { get; private set; }
     private Material playerColor;
     private GameManager gameManager;
@@ -27,13 +28,11 @@ public class Player : MonoBehaviour
     {
         if (GameManager.gameActive)
         {
-            // Decrease health over time
-            health -= 0.25f * Time.deltaTime;
-            healthBar.value = health;
+            // ABSTRACTION
 
-            // Decrease speed over time if higher than 20
-            if (speed > 15.0f) { speed -= 0.1f; }
-
+            // Updates the healthbar and drains health and speed
+            HandlePlayerStatus();
+            
             // Keep within movement range bounds
             KeepInRange();
 
@@ -45,12 +44,20 @@ public class Player : MonoBehaviour
             transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
             // Player movement forwards and backwards
             transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
-
-            if (health <= 0f)
-            {
-                gameManager.EndGame();
-            }
         }
+    }
+
+    private void HandlePlayerStatus()
+    {
+        // Decrease health over time
+        health -= 0.25f * Time.deltaTime;
+        healthBar.value = health;
+
+        // Ends game if health is 0
+        if (health <= 0f) gameManager.EndGame();
+
+        // Decrease speed over time if higher than 20
+        if (speed > 15.0f) { speed -= 0.1f; }
     }
 
     private void KeepInRange()

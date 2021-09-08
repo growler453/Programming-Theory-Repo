@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    // ENCAPSULATION
     [SerializeField] Text score;
     public static bool gameActive { get; private set; }
     [SerializeField] GameObject startPrompt;
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        // ABSTRACTION
         if (Input.GetKeyDown(KeyCode.Space) && startPrompt.activeSelf)
         {
             StartGame();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class Junk : Candy
 {
     private List<string> grossText = new List<string>(new string[] { "gross", "eww", "nasty" });
